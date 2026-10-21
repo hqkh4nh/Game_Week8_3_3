@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneSwitchTrigger : MonoBehaviour
 {
 
-    [SerializeField] private string sceneToLoad = "_Scene_1";
+    public Canvas GameMenu;
 
     bool isLoading;
 
@@ -25,7 +25,6 @@ public class SceneSwitchTrigger : MonoBehaviour
         if (isLoading) return;
 
         isLoading = true;
-        Debug.Log($"[SceneSwitchTrigger] {other.name} chạm trigger, nạp scene {sceneToLoad}");
-        SceneManager.LoadScene(sceneToLoad);
+        GameMenu.enabled = true;  
     }
 }
